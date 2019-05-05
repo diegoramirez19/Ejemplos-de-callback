@@ -1,0 +1,40 @@
+"use strict"
+
+//Funcion saludar que recibe como parametro a otra funcion... (callback)
+function saludar(callback){
+    let variable = "Bienvenidos...";
+    callback(variable);
+};
+
+//Se manda a imprimir por pantalla un primer paso.
+console.log('Primer paso');
+
+//Se ejecuta la funcion saludar de forma asincróna
+//pasandole como parametro otra funcion, en este caso una funcion de flecha
+//que en el cuerpo lleva un setTimeout que se ejecutara en 2 segundos.
+saludar((parametro)=>{
+    setTimeout(function(MENSAJE="A este mundo de la programacion"){
+        console.log(parametro);
+        console.log(MENSAJE);
+    },2000);
+});
+
+//Se manda a imprimir por pantalla un segundo paso.
+console.log('Segundo paso');
+
+//Funcion despedirse que recibe como parametro a otra funcion.
+function despedirse(callback){
+    let variable = "Nos vemos pronto";
+    callback(variable);
+};
+
+//Se utiliza la funcion despedirse, dandole como parametro una funcion que se
+//ejecutara de forma asincróna
+despedirse( (parametro)=>{
+    setTimeout(() => {
+        console.log(parametro);
+    }, 5000);
+} );
+
+//Se manda a imprimir un tercer paso.
+console.log('Tercer paso');
