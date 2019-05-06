@@ -1,0 +1,16 @@
+"use strict";
+var variable1;
+var variable2;
+variable1 = prompt("Escriba el primer numero", "1");
+variable2 = prompt("Escriba el segundo numero", "1");
+var numero1 = parseInt(variable1, 10);
+var numero2 = parseInt(variable2, 10);
+function math(a, b, callback) {
+    var result = a + b;
+    console.log(result);
+    callback(result);
+}
+function MostarMensaje(callback) {
+    alert("El resultado de la operacion es " + callback);
+}
+math(numero1, numero2, MostarMensaje);
