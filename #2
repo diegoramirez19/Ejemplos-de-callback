@@ -1,0 +1,26 @@
+
+//Funcion de orden superior.
+//Esta es la que recibe la funcion como parametro.
+function Funcion1(Parametro){
+
+    setTimeout(() => {
+        console.log("Primero ejecuto algo y despues hago el callback");
+        let variable = "Bienvenidos al mundo la programacion";
+        Parametro(variable);
+    }, 2000);
+    console.log("-----<>-------")
+};
+
+//Callback... Funcion que sera pasada a otra funcion como parametro
+function Funcion2(callback){
+    console.log(callback);
+    console.log('Primer callback');
+};
+
+Funcion1(Funcion2);
+
+// Otra forma de ejecutar Callback.
+// Funcion1((callback)=>{
+//     console.log(callback);
+//     console.log('Primer callback');
+// });
